@@ -13,6 +13,11 @@ public class HRDepartment {
     Employee employee;
      public void meetNewEmployee(String firstname, String lastname, String ssn){
          Employee em = new Employee();
-         
+         em.setFirstname(firstname);
+         em.setLastname(lastname);
+         em.setSsn(ssn);
+     }
+     public String getStatus(){
+         return employee.getStatus();
      }
 }
