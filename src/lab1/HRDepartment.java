@@ -11,11 +11,15 @@ package lab1;
  */
 public class HRDepartment {
     Employee employee;
+    
+    public HRDepartment() {
+        this.employee = new Employee();
+    }
      public void meetNewEmployee(String firstname, String lastname, String ssn){
-         Employee em = new Employee();
-         em.setFirstName(firstname);
-         em.setLastName(lastname);
-         em.setSsn(ssn);
+         //Employee em = new Employee();
+         employee.setFirstName(firstname);
+         employee.setLastName(lastname);
+         employee.setSsn(ssn);
      }
      public String getStatus(){
          return employee.getStatus();
