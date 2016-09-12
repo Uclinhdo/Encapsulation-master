@@ -44,7 +44,7 @@ public class Employee {
     public void meetWithHrForBenefitAndSalryInfo() {
         SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
         String fmtDate = sdf.format(currentDate);
-        System.out.println("Met with Hr on " + getCurrentDate() );
+        System.out.println("Met with Hr on " + fmtDate);
         metWithHr = true;
     }
 
@@ -53,7 +53,7 @@ public class Employee {
         if(metWithHr) {
             SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
             String fmtDate = sdf.format(currentDate);
-            System.out.println("Met with Dept. Staff on " + getCurrentDate());
+            System.out.println("Met with Dept. Staff on " + fmtDate);
             metDeptStaff = true;
         } else {
             System.out.println("Sorry, you cannot meet with "
@@ -66,7 +66,7 @@ public class Employee {
         if(metWithHr && metDeptStaff) {
             SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
             String fmtDate = sdf.format(currentDate);
-            System.out.println("Reviewed Dept. Policies on " + getCurrentDate());
+            System.out.println("Reviewed Dept. Policies on " + fmtDate);
             reviewedDeptPolicies = true;
         } else {
             System.out.println("Sorry, you cannot review "
@@ -80,7 +80,7 @@ public class Employee {
         if(metWithHr && metDeptStaff && reviewedDeptPolicies) {
             SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
             String fmtDate = sdf.format(currentDate);
-            System.out.println("Moved into cube on " + getCurrentDate());
+            System.out.println("Moved into cube on " + fmtDate);
             this.cubeId = cubeId;
             this.movedIn = true;
         } else {
@@ -95,12 +95,12 @@ public class Employee {
     public String getStatus() {
         SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
         String fmtDate = sdf.format(currentDate);
-
+       // return "a";
         if(metWithHr && metDeptStaff
            && reviewedDeptPolicies && movedIn) {
-            return "Orientation is completed on: " + getCurrentDate();
+            return "Orientation is completed on: " + fmtDate;
         } else {
-            return getCurrentDate() + ": Orientation in progress...";
+            return fmtDate + ": Orientation in progress...";
         }
     }
 
