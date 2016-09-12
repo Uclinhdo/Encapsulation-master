@@ -24,27 +24,26 @@ public class Employee {
     private String cubeId;
     private Date currentDate;
 
+    
     public Employee() {
         currentDate = new Date();
     }
-    //add a new private property for getDateFormat
-    private String getCurrentDate(){
-        SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
-        return sdf.format(currentDate);
-    }
+    
+    
+    
     // create a new method
     public void EmployeeOrientation(){
-        this.meetWithHrForBenefitAndSalryInfo();
-        this.meetDepartmentStaff();
-        this.reviewDeptPolicies();
-        this.moveIntoCubicle(cubeId);
-        this.getStatus();
-        System.out.println(getCurrentDate());
+        meetWithHrForBenefitAndSalryInfo();
+        meetDepartmentStaff();
+        reviewDeptPolicies();
+        moveIntoCubicle(cubeId);
+        getStatus();
+        
     }
     // Assume this must be performed first
     public void meetWithHrForBenefitAndSalryInfo() {
-        //SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
-        //String fmtDate = sdf.format(currentDate);
+        SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
+        String fmtDate = sdf.format(currentDate);
         System.out.println("Met with Hr on " + getCurrentDate() );
         metWithHr = true;
     }
@@ -52,8 +51,8 @@ public class Employee {
     // Assume this is must be performed second
     public void meetDepartmentStaff() {
         if(metWithHr) {
-            //SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
-            //String fmtDate = sdf.format(currentDate);
+            SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
+            String fmtDate = sdf.format(currentDate);
             System.out.println("Met with Dept. Staff on " + getCurrentDate());
             metDeptStaff = true;
         } else {
@@ -65,8 +64,8 @@ public class Employee {
     // Assume this must be performed third
     public void reviewDeptPolicies() {
         if(metWithHr && metDeptStaff) {
-           // SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
-            //String fmtDate = sdf.format(currentDate);
+            SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
+            String fmtDate = sdf.format(currentDate);
             System.out.println("Reviewed Dept. Policies on " + getCurrentDate());
             reviewedDeptPolicies = true;
         } else {
@@ -79,8 +78,8 @@ public class Employee {
     // Assume this must be performed 4th
     public void moveIntoCubicle(String cubeId) {
         if(metWithHr && metDeptStaff && reviewedDeptPolicies) {
-            //SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
-            //String fmtDate = sdf.format(currentDate);
+            SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
+            String fmtDate = sdf.format(currentDate);
             System.out.println("Moved into cube on " + getCurrentDate());
             this.cubeId = cubeId;
             this.movedIn = true;
@@ -94,8 +93,8 @@ public class Employee {
     }
 
     public String getStatus() {
-        //SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
-        //String fmtDate = sdf.format(currentDate);
+        SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyyy");
+        String fmtDate = sdf.format(currentDate);
 
         if(metWithHr && metDeptStaff
            && reviewedDeptPolicies && movedIn) {
@@ -104,4 +103,86 @@ public class Employee {
             return getCurrentDate() + ": Orientation in progress...";
         }
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getSsn() {
+        return ssn;
+    }
+
+    public void setSsn(String ssn) {
+        this.ssn = ssn;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public boolean isMetWithHr() {
+        return metWithHr;
+    }
+
+    public void setMetWithHr(boolean metWithHr) {
+        this.metWithHr = metWithHr;
+    }
+
+    public boolean isMetDeptStaff() {
+        return metDeptStaff;
+    }
+
+    public void setMetDeptStaff(boolean metDeptStaff) {
+        this.metDeptStaff = metDeptStaff;
+    }
+
+    public boolean isReviewedDeptPolicies() {
+        return reviewedDeptPolicies;
+    }
+
+    public void setReviewedDeptPolicies(boolean reviewedDeptPolicies) {
+        this.reviewedDeptPolicies = reviewedDeptPolicies;
+    }
+
+    public boolean isMovedIn() {
+        return movedIn;
+    }
+
+    public void setMovedIn(boolean movedIn) {
+        this.movedIn = movedIn;
+    }
+
+    public String getCubeId() {
+        return cubeId;
+    }
+
+    public void setCubeId(String cubeId) {
+        this.cubeId = cubeId;
+    }
+
+    public Date getCurrentDate() {
+        return currentDate;
+    }
+
+    public void setCurrentDate(Date currentDate) {
+        this.currentDate = currentDate;
+    }
+
+    
 }
